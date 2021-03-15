@@ -1,0 +1,36 @@
+openapi: 3.0.1
+info:
+  title: fpay-api-rest-demo
+  description: FPay test demo
+  version: 1.0.0
+servers:
+- url: /api/v1
+tags:
+- name: Test
+  description: Prime test calculation
+- name: Specification
+  description: The swagger API specification
+paths:
+  /primenumbers/{inputNumber}:
+    get:
+      tags:
+      - Prime
+      parameters:
+      - name: inputNumber
+        in: path
+        description: The number to retrieve
+        required: true
+        schema:
+          type: number
+      responses:
+        200:
+          description: Return the descendent series
+          content: {}
+  /spec:
+    get:
+      tags:
+      - Specification
+      responses:
+        200:
+          description: Return the API specification
+          content: {}
